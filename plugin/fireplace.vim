@@ -452,7 +452,7 @@ endfunction
 function! s:temp_response(response) abort
   let output = []
   if get(a:response, 'out', '') !=# ''
-    let output = map(split(a:response.out, "\n"), '";".v:val')
+    let output = split(a:response.out, "\n")
   endif
   if has_key(a:response, 'value')
     let output += [a:response.value]
